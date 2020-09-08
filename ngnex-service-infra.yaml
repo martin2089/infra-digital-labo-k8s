@@ -13,4 +13,4 @@ spec:
   - name: port-1
     port: 80
     protocol: TCP
-    targetPort: 8080y
+    targetPort: 8080
