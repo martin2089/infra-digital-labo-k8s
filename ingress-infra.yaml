@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: labo-ingress
+  namespace: default
+spec:
+  rules:
+  - host: infra.web
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-deployment
+          servicePort: 80
