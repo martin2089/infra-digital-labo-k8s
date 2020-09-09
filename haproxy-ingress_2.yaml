@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: haproxy-ingress
+spec:
+  defaultBackend:
+    service:
+      name: nginx
+      port:
+        number: 80
