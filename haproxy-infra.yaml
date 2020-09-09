@@ -100,7 +100,7 @@ metadata:
   labels:
     run: ingress-default-backend
   name: ingress-default-backend
-  namespace: haproxy-controller
+  namespace: default
 spec:
   selector:
     run: ingress-default-backend
@@ -169,7 +169,7 @@ metadata:
   labels:
     run: haproxy-ingress
   name: haproxy-ingress
-  namespace: haproxy-controller
+  namespace: default
 spec:
   selector:
     run: haproxy-ingress
