@@ -2,14 +2,11 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: haproxy-ingress
-  annotations:
-    haproxy.ingress.kubernetes.io/ssl-redirect: \"false\"  
-    haproxy.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
       paths:
-      - path: /prueba
+      - path: /
         backend:
           serviceName: nginx
           servicePort: 80
