@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: haproxy-ingress
+  namespace: haproxy-controller
+  labels:
+    run: haproxy-ingress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: haproxy-ingress
+  template:
+    metadata:
+      labels:
+        run: haproxy-ingress
+    spec:
+      serviceAccountName: haproxy-ingress-service-account
+      containers:
+        - name: haproxy-ingress
+          image: haproxytech/kubernetes-ingress
+          args:
+            - --default-backend-service=haproxy-controller/ingress-default-backend
+            - --default-ssl-certificate=default/tls-secret
+            - --configmap=default/haproxy-configmap
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace        
+          ports:
+            - name: http
+              containerPort: 80
+            - name: https
+              containerPort: 443
