@@ -9,4 +9,3 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: haproxy-ingress-service-account
-  namespace: haproxy-controller
