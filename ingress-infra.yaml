@@ -10,5 +10,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: nginx-deployment
+          serviceName: nginx
           servicePort: 80
