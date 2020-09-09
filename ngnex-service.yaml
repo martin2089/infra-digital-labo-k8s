@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-07-14T03:06:23Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:externalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-07-14T03:06:23Z"
+  name: nginx-deployment
+  namespace: default
+  resourceVersion: "513923"
+  selfLink: /api/v1/namespaces/default/services/nginx-deployment
+  uid: e9eb2b1b-bf0f-41d6-8b1a-a68b75dcaac7
+spec:
+  clusterIP: 10.96.97.132
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30373
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
