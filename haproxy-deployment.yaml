@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: haproxy-ingress
+  namespace: haproxy-controller
   labels:
-    app: haproxy-ingress
+    run: haproxy-ingress
 spec:
   replicas: 1
   selector:
@@ -18,6 +19,10 @@ spec:
       containers:
         - name: haproxy-ingress
           image: haproxytech/kubernetes-ingress
+          args:
+            - --default-backend-service=haproxy-controller/ingress-default-backend
+            - --default-ssl-certificate=default/tls-secret
+            - --configmap=default/haproxy-configmap
           env:
             - name: POD_NAME
               valueFrom:
