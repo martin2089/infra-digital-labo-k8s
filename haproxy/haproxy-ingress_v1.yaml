@@ -4,7 +4,7 @@ metadata:
   name: haproxy-ingress
   annotations:
     haproxy.org/ingress.class: "haproxy"
-    haproxy.org/load-balance: "roundrobin
+    haproxy.org/load-balance: "roundrobin"
     haproxy.org/ssl-redirect: "true"
     haproxy.org/ssl-redirect-code: "301"
 spec:
