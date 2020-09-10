@@ -4,13 +4,13 @@ metadata:
   name: haproxy-ingress
 spec:
   rules:
-  - host: nginx.k8s.infradigital.com.ar
+  - host: nginx.k8s.infradigital.com
     http:
       paths:
       - backend:
           serviceName: nginx
           servicePort: 80
-  - host: sql.k8s.infradigital.com.ar
+  - host: sql.k8s.infradigital.com
     http:
       paths:
       - backend:
