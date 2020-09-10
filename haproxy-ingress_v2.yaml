@@ -4,15 +4,13 @@ metadata:
   name: haproxy-ingress
 spec:
   rules:
-  - http:
-      paths:
-      - path: /nginx
-        backend:
-          serviceName: nginx
-          servicePort: 80
-  - http:
-      paths:
-      - path: /sql
-        backend:
-          serviceName: postgres
-          servicePort: 5432
+  http:
+    paths:
+    - path: /nginx
+      backend:
+        serviceName: nginx
+        servicePort: 80
+    - path: /sql
+      backend:
+        serviceName: postgres
+        servicePort: 5432
