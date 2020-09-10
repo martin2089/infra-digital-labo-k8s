@@ -4,5 +4,4 @@ metadata:
   name: haproxy-configmap
   namespace: default
 data:
-  servers-increment: "42"
   ssl-redirect: "TRUE"
