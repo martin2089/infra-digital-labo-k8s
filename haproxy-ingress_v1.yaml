@@ -11,7 +11,7 @@ spec:
           serviceName: nginx
           servicePort: 80
   - host: sql.k8s.infradigital.com
-    http:
+    https:
       paths:
       - backend:
           serviceName: postgres
