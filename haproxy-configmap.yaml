@@ -5,4 +5,4 @@ metadata:
   namespace: default
 data:
   servers-increment: "42"
-  ssl-redirect: "ON"
+  ssl-redirect: "OFF"
