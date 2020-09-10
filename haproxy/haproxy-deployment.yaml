@@ -20,8 +20,7 @@ spec:
         - name: haproxy-ingress
           image: haproxytech/kubernetes-ingress
           args:
-            - --default-backend-service=haproxy-controller/ingress-default-backend
-            - --default-ssl-certificate=default/tls-secret
+            - --default-ssl-certificate=default/my-tls
             - --configmap=default/haproxy-configmap
           env:
             - name: POD_NAME
