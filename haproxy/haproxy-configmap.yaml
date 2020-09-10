@@ -4,5 +4,5 @@ metadata:
   name: haproxy-configmap
   namespace: default
 data:
-  ssl-redirect: "false"
+  ssl-redirect: "true"
   ssl-certificate: "default/tls-secret"
