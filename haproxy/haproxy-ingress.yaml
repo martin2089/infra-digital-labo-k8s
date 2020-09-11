@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: haproxy-ingress
+spec:
+  rules:
+  - host: nginx.k8s.infradigital.com
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: nginx
+          servicePort: 80
+  - host: www.letschat.com
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: letschat
+          servicePort: 8080
