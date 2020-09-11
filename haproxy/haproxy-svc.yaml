@@ -5,8 +5,6 @@ metadata:
   namespace: haproxy-controller
   labels:
     run: haproxy-ingress
-  annotations:
-    haproxy.org/path-rewrite: "/"
 spec:
   type: NodePort
   ports:
