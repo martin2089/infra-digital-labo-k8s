@@ -18,3 +18,10 @@ spec:
         backend:
           serviceName: letschat
           servicePort: 8080
+  - host: www.guestbook.com
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: frontend
+          servicePort: 80
