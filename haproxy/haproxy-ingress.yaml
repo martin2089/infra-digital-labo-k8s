@@ -25,9 +25,3 @@ spec:
         backend:
           serviceName: frontend
           servicePort: 80
-  - host: sql.k8s.infradigital.com
-    paths:
-    - path: "/"
-      backend:
-        serviceName: postgres
-        servicePort: 5432
